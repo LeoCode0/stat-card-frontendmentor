@@ -1,0 +1,169 @@
+:root {
+  --dark-blue: hsl(233, 47%, 7%);
+  --desaturated-blue: hsl(244, 38%, 16%);
+  --violet: hsl(277, 64%, 61%);
+  --white: hsl(0, 0%, 100%);
+  --transparent-white: hsla(0, 0%, 100%, 0.75);
+  --transparent-white-2: hsla(0, 0%, 100%, 0.6);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  width: 100vw;
+}
+
+.main {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--dark-blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  display: flex;
+  width: 90%;
+  height: 80%;
+
+  border-radius: 15px;
+  background-color: var(--desaturated-blue);
+  color: var(--white);
+}
+
+.card__container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card__image {
+  width: 100%;
+  height: 35%;
+  position: relative;
+}
+
+.card__image .purple__window {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: var(--violet);
+  top: 0;
+  opacity: 0.6;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.card__image img {
+  width: 100%;
+  height: 100%;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.card__description {
+  text-align: center;
+  margin: 20px auto;
+  width: 80%;
+}
+
+.card__title {
+  font-size: 2.4rem;
+  margin-bottom: 15px;
+}
+
+.card__title span {
+  color: var(--violet);
+}
+
+.card__info {
+  font-size: 1.3rem;
+  line-height: 2.2rem;
+  color: var(--transparent-white);
+}
+
+.card__stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+  text-transform: uppercase;
+}
+
+.card__stat {
+  margin: 8px 0;
+  width: 100%;
+}
+
+.card__stat .number {
+  color: var(--white);
+  font-size: 1.9rem;
+  font-weight: 700;
+}
+
+.card__stat .name {
+  color: var(--transparent-white-2);
+  margin-top: 5px;
+  font-family: "Lexend Deca", sans-serif;
+  letter-spacing: 1px;
+}
+
+@media (min-width: 1024px) {
+  .card {
+    height: 50%;
+    width: 80%;
+    max-width: 1000px;
+    max-height: 360px;
+  }
+
+  .card__container {
+    flex-direction: row-reverse;
+    width: 100%;
+    height: 100%;
+  }
+
+  .card__image {
+    width: 50%;
+    height: 100%;
+  }
+
+  .card__image img {
+    border-radius: 0;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+
+  .info__container {
+    width: 50%;
+    padding: 40px 20px 40px 40px;
+  }
+
+  .card__description,
+  .card__stats {
+    text-align: left;
+  }
+
+  .card__description {
+    margin: 0;
+  }
+
+  .card__stats {
+    justify-content: initial;
+  }
+
+  .card__stats .card__stat {
+    width: max-content;
+    margin: 80px 20px 0 0;
+  }
+}
